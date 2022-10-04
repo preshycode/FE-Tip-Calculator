@@ -26,7 +26,7 @@ pBtn[i].addEventListener('click', (e) => {
     const nopValue = noOfPeople.value;
     
     const tipAmountCal = (pBtnValue * billValue)/nopValue;
-    const totalCal = billValue / nopValue;
+    const totalCal = (billValue / nopValue + tipAmountCal);
     
     if (isNaN(tipAmountCal) || tipAmountCal == "Infinity" || tipAmountCal == 0) {
         tipAmount.innerHTML = `$0.00`;
@@ -55,7 +55,7 @@ custom.addEventListener('click', () => {
    
     const nopValue = noOfPeople.value;
     const tipAmountCal = (customValue * billValue)/nopValue;
-    const totalCal = billValue / nopValue;
+    const totalCal = (billValue / nopValue) + tipAmountCal;
     
 
     if (isNaN(tipAmountCal) || tipAmountCal == "Infinity" || tipAmountCal == 0) {
