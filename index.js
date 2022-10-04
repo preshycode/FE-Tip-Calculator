@@ -44,8 +44,10 @@ pBtn[i].addEventListener('click', (e) => {
 custom.addEventListener('click', () => {
     if (noOfPeople.value == 0 ) {
         fText.style.display = 'block';
+        noOfPeople.parentElement.classList.add('failure');
     } else {
         fText.style.display = 'none';
+        noOfPeople.parentElement.classList.remove('failure');
     }
 
     const customValue = custom.value/100;
