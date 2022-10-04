@@ -1,0 +1,218 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+body {
+  background-color: hsl(185, 41%, 84%);
+  font-family: "Space Mono", monospace;
+  font-size: 24px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+form {
+  width: 720px;
+  padding: 30px 35px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 20px;
+}
+.Linput {
+  display: block;
+  width: 100%;
+  height: 30px;
+  font-size: 20px;
+  font-family: "Space Mono", monospace;
+  color: hsl(183, 100%, 15%);
+  padding: 5px 10px;
+  text-align: right;
+  border: none;
+  background-color: hsl(186, 66%, 94%);
+  border-radius: 5px;
+  cursor: pointer;
+}
+.Linput2 {
+  display: block;
+  width: 100%;
+  height: 30px;
+  font-size: 20px;
+  font-family: "Space Mono", monospace;
+  color: hsl(183, 100%, 15%);
+  padding: 5px 10px;
+  text-align: right;
+  border: none;
+  background-color: hsl(186, 66%, 94%);
+  border-radius: 5px;
+  cursor: pointer;
+}
+input:focus {
+  outline: 1px solid hsl(172, 67%, 45%);
+}
+.failure .Linput {
+  border: 1px red solid;
+}
+.Ftext {
+  color: rgb(209, 97, 6);
+  font-size: 13px;
+  margin-left: 80px;
+  font-weight: 700;
+}
+#top {
+  width: 320px;
+}
+.bill {
+  margin-bottom: 25px;
+}
+
+#percentages {
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-gap: 15px;
+  margin-bottom: 25px;
+  margin-top: 10px;
+}
+.Pcustom {
+  width: 80px;
+  border: none;
+  background-color: hsl(186, 66%, 94%);
+  padding: 0px 10px;
+  border-radius: 5px;
+  font-size: 20px;
+  font-family: "Space Mono", monospace;
+  color: hsl(183, 100%, 15%);
+  text-align: right;
+  cursor: pointer;
+}
+
+.Pbtn {
+  background-color: hsl(183, 100%, 15%);
+  padding: 5px 20px;
+  color: white;
+  width: 100px;
+  border: none;
+  border-radius: 3px;
+  font-size: 20px;
+  font-family: "Space Mono", monospace;
+  cursor: pointer;
+}
+.Pbtn:hover {
+  background-color: hsl(172, 73%, 75%);
+  color: hsl(183, 100%, 15%);
+}
+.Sfs {
+  font-size: 13px;
+  color: hsl(186, 14%, 43%);
+}
+
+#bottom {
+  width: 300px;
+  background-color: hsl(183, 100%, 15%);
+  border-radius: 15px;
+  padding: 40px 30px;
+}
+#bottom .total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: white;
+  margin-top: 20px;
+}
+#bottom small {
+  color: hsl(184, 14%, 56%);
+}
+#bottom span {
+  color: hsl(172, 67%, 45%);
+  font-size: 40px;
+  font-weight: 700;
+  margin-top: -15px;
+}
+#bottom button {
+  width: 100%;
+  background-color: hsl(172, 73%, 73%);
+  color: hsl(183, 100%, 15%);
+  font-size: 20px;
+  font-weight: 700;
+  padding: 10px 0;
+  border: none;
+  border-radius: 5px;
+  margin-top: 100px;
+}
+#img1 {
+  position: absolute;
+  left: 50px;
+  top: 305px;
+}
+#img2 {
+  position: absolute;
+  top: 70px;
+  left: 50px;
+}
+#img3 {
+  position: absolute;
+  top: -150px;
+  left: 340px;
+}
+#fText {
+  display: none;
+  position: absolute;
+  left: 200px;
+  top: 275px;
+}
+
+@media only screen and (max-width: 800px) {
+  form {
+    width: 350px;
+    display: block;
+    padding: 20px 50px;
+    margin-top: 500px;
+    margin-bottom: 100px;
+  }
+  #top {
+    width: 330px;
+    margin-bottom: 30px;
+  }
+  #bottom {
+    width: 300px;
+  }
+  #percentages {
+    grid-template-columns: auto auto;
+
+    grid-gap: 15px;
+  }
+  .Pbtn {
+    width: 170px;
+    padding: 15px 0;
+    font-size: 24px;
+  }
+  .Pcustom {
+    width: 150px;
+    font-size: 24px;
+  }
+  .Ftext {
+    margin-left: 95px;
+  }
+  #img1 {
+    position: absolute;
+    left: 65px;
+    top: 919px;
+  }
+  #img2 {
+    position: absolute;
+    top: 560px;
+    left: 65px;
+  }
+  #img3 {
+    position: absolute;
+    top: 350px;
+    left: 180px;
+  }
+  #fText {
+    /* display: none; */
+
+    left: 200px;
+    top: 890px;
+  }
+}

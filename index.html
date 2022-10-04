@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+<link rel="stylesheet" href="index.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Tip calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <main>
+    <img src="/images/logo.svg" id="img3" alt="">
+    <form action="">
+      <div id="top">
+        <label for="" class="Sfs">Bill</label>
+        <img src="/images/icon-dollar.svg" id="img2" alt="">
+        <input type="number" name="" class="Linput2 bill" placeholder="0" id="bill">
+        <label for="" class="Sfs" id="select-tip">Select Tip %</label>
+        <div id="percentages">
+          <button value="5"  class="Pbtn" id="pBtn">5%</button>
+          <button value="10" class="Pbtn" id="pBtn">10%</button>
+          <button value="15" class="Pbtn" id="pBtn">15%</button>
+          <button value="25" class="Pbtn" id="pBtn">25%</button>
+          <button value="50" class="Pbtn" id="pBtn">50%</button>
+          <input type="number" class="Pcustom" name="" id="custom" placeholder="Custom" value="">
+        </div>
+        
+        <label for="" class="Sfs">Number of People</label>
+        
+      <img src="/images/icon-person.svg" id="img1" alt="">
+        <input type="number" name="" class="Linput" placeholder="0" id="nop">
+      </div>
+
+      
+  
+      <div id="bottom">
+        <div class="total">
+          <label for="">Tip Amount <br><small>/ person</small></label>
+          <span class="cash" id="tipAmount">$0.00</span>
+        </div>
+        <div class="total">
+          <label for="">Total <br><small>/ person</small></label>
+          <span class="cash" id="total">$0.00</span>
+        </div>
+        <button type="reset">RESET</button>
+      </div>
+    </form>
+  </main>
+  
+  <span class="Ftext" id="fText">Can't be zero</span>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">EleVate</a>.
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
