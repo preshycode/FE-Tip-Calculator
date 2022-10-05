@@ -1,53 +1,77 @@
+const noOfPeople = document.getElementById('nop');
+const fText = document.getElementById('fText');
+const custom = document.getElementById('custom');
+const pBtn = document.querySelectorAll('#pBtn');
+const bill = document.getElementById('bill');
+const tipAmount = document.getElementById('tipAmount');
+const total = document.getElementById('total');
+const reset = document.getElementById('reset');
 
-const jsonData = fetch("./data.json")
-.then((response) => response.json())
-.then((data) => {
-    let output = '';
-    data.forEach(function(user) {
-        output += 
-        `<div id="${user.day} ">
-        <div class="h1" id="h">$${user.amount}</div>
-        <div class="h2" id="h2">$${user.amount}</div>
-        <div class="days" id="${user.day}-div" style="height:${user.amount*2}px"></div>
-        <div class="days2" id="${user.day}-div2" style="height:${user.amount*3}px"></div>
-        <p id="${user.day}-text">${user.day}</p>
-      </div>`;
-    });
-    const bar = document.getElementById("bar");
-    bar.innerHTML = output;
-    
-    
-    const hover2 = document.querySelectorAll("#h");
-    const hover3 = document.querySelectorAll("#h2");
-    const hoverDiv = document.querySelectorAll(".days");
-    const hoverDiv2 = document.querySelectorAll(".days2");
 
-    for(let i = 0; i<hoverDiv.length; i++) {
+for(let i = 0; i < pBtn.length; i++) {
+pBtn[i].addEventListener('click', (e) => {
+    e.preventDefault();
+    if (noOfPeople.value == 0 || noOfPeople.value == '' ) {
+        fText.style.display = 'block';
+        noOfPeople.value = 0;
+        noOfPeople.parentElement.classList.add('failure');
+      console.log( noOfPeople.parentElement);
       
-      hoverDiv[i].addEventListener("mouseover", () => {
         
-        hover2[i].style.display = "block";
-      })
+    } else {
+        fText.style.display = 'none';
+        noOfPeople.parentElement.classList.remove('failure');
+    }
+    const pBtnValue = pBtn[i].value/100;
+    const billValue = bill.value;
+    const nopValue = noOfPeople.value;
+    
+    const tipAmountCal = (pBtnValue * billValue)/nopValue;
+    const totalCal = (billValue / nopValue + tipAmountCal);
+    
+    if (isNaN(tipAmountCal) || tipAmountCal == "Infinity" || tipAmountCal == 0) {
+        tipAmount.innerHTML = `$0.00`;
+        total.innerHTML = `$0.00`;
+        
+    } else {
+        tipAmount.innerHTML = `$${tipAmountCal.toFixed(2)}`;
+    total.innerHTML = `$${totalCal.toFixed(2)}`
 
-      hoverDiv[i].addEventListener("mouseout", () => {
-        
-        hover2[i].style.display = "none";
-      })
-
-      hoverDiv2[i].addEventListener("mouseover", () => {
-        
-        hover3[i].style.display = "block";
-      })
-     
-      hoverDiv2[i].addEventListener("mouseout", () => {
-          
-        hover3[i].style.display = "none";
-      })
     }
     
+})
+
+}
+custom.addEventListener('click', () => {
+    if (noOfPeople.value == 0 ) {
+        fText.style.display = 'block';
+        noOfPeople.parentElement.classList.add('failure');
+    } else {
+        fText.style.display = 'none';
+        noOfPeople.parentElement.classList.remove('failure');
+    }
+
+    const customValue = custom.value/100;
+    const billValue = bill.value;
    
-  
-});
+    const nopValue = noOfPeople.value;
+    const tipAmountCal = (customValue * billValue)/nopValue;
+    const totalCal = (billValue / nopValue) + tipAmountCal;
+    
 
+    if (isNaN(tipAmountCal) || tipAmountCal == "Infinity" || tipAmountCal == 0) {
+        tipAmount.innerHTML = `$0.00`;
+        total.innerHTML = `$0.00`;
+        
+    } else {
+        tipAmount.innerHTML = `$${tipAmountCal.toFixed(2)}`;
+    total.innerHTML = `$${totalCal.toFixed(2)}`
 
+    }
+    
 
+})
+reset.addEventListener("click", () => {
+    tipAmount.innerHTML = `$0.00`;
+    total.innerHTML = `$0.00`;
+})
